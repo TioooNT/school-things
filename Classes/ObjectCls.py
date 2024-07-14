@@ -1,6 +1,5 @@
 class Object():
-	def getinfo (self):
-		
+	def getinfo (self) -> None:
 		#Is a class
 		if isinstance(self, Class):
 			print(f"Class name: {self.name}")
@@ -36,9 +35,14 @@ class Object():
 			for teacher in self.clss.tchlist:
 				print(f"- {teacher.name}: {teacher.subject}")
 
-	def alterinfo (self, name, year):
+	def alterinfo (self, name, year) -> None:
 		self.name = name
 		self.year = year
+	
+	def class_name(self) -> str:
+		return type(self).__name__
+
+	
 
 from ClssCls import Class
 from TeacherCls import Teacher
